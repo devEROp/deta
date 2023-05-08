@@ -23,9 +23,17 @@ void loop() {
   Serial.print("vddl== "); 
   Serial.println(vddl);
   if(vddr > 323 && vddl <= 323){
-      Sex(222,0,111,0);
+    Sex(111,0,222,0);
+    while(vddr < 323){
+      vddr   = analogRead(A1);
+      delay(3);
+    }
   }else if(vddr <= 323 && vddl > 323){
-      Sex(111,0,222,0);
+    Sex(111,0,222,0);
+    while(vddl < 323){
+      vddl   = analogRead(A0);
+      delay(3);
+    }
   }else{
     Sex(111,0,111,0);
   }
